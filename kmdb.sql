@@ -112,15 +112,42 @@ DROP TABLE IF EXISTS characters;
 
 CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  movie_title TEXT,
+  title TEXT,
+  year INTEGER,
   mpaa_rating TEXT,
-  year_released INTEGER,
-  
+  studio_id TEXT,
+  actor_id TEXT,
+  character_id TEXT
 );
+
+CREATE TABLE studios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  studio_id TEXT,
+  movie_id TEXT,
+  location TEXT
+);
+
+CREATE TABLE characters (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  character_id TEXT,
+  movie_id TEXT,
+  actor_id TEXT
+;
+
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  actor_id TEXT,
+  character_id TEXT,
+  movie_id TEXT
+;
+
+
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+
 
 -- Prints a header for the movies output
 .print "Movies"
